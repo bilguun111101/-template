@@ -1,0 +1,71 @@
+{
+  "cli": {
+    "version": ">= 18.11.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_ENV": "development"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_ENV": "preview"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_ENV": "production"
+      }
+    },
+    "production-apk": {
+      "distribution": "internal",
+      "ios": {
+        "autoIncrement": false,
+        "buildArtifactPaths": ["ios/build/*"]
+      },
+      "android": {
+        "autoIncrement": false
+      },
+      "channel": "production",
+      "env": {
+        "EXPO_PUBLIC_ENV": "production"
+      }
+    },
+    "testflight": {
+      "ios": {
+        "autoIncrement": true,
+        "buildArtifactPaths": ["ios/build/*"]
+      },
+      "android": {
+        "autoIncrement": true
+      },
+      "channel": "testflight",
+      "env": {
+        "EXPO_PUBLIC_ENV": "testflight"
+      }
+    },
+    "testflight-android": {
+      "distribution": "internal",
+      "ios": {
+        "autoIncrement": true,
+        "buildArtifactPaths": ["ios/build/*"]
+      },
+      "android": {
+        "autoIncrement": true
+      },
+      "channel": "testflight",
+      "env": {
+        "EXPO_PUBLIC_ENV": "testflight"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

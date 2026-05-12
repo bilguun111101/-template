@@ -1,0 +1,27 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "types": ["node", "jest"],
+    "paths": {
+      "#/*": ["./src/*"],
+      "crypto": ["./src/platform/crypto.ts"],
+      "multiformats/cid": ["./node_modules/multiformats/types/src/cid.d.ts"],
+      "multiformats/hashes/hasher": [
+        "./node_modules/multiformats/types/src/hashes/hasher.d.ts"
+      ]
+    },
+    "moduleSuffixes": [".web", ".native", ""],
+    "plugins": [
+      {
+        "name": "ts-plugin-sort-import-suggestions",
+        "moveUpPatterns": ["#/", "@lingui/react/macro"],
+        "moveDownPatterns": ["react-native-reanimated/lib"]
+      }
+    ]
+  },
+  "exclude": ["bskyweb", "bskyembed", "web-build"]
+}
